@@ -1,0 +1,318 @@
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --green: rgb(5, 87, 5);
+    --grey: rgb(182, 178, 178);
+    --lightgreen: rgb(48, 129, 48);
+    --brown: #7a2121;;
+}
+
+
+.pageContainer {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(197, 165, 165);
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 3fr;
+    gap: 5px;
+}
+
+body {
+    height: 100vh;
+}
+
+.header {
+    background-color: var(--green);
+    grid-column: 1 / 3;
+    grid-row: 1;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    min-height: 100px;
+}
+
+.headerTitle,
+.sidebarTitle,
+#contentTitle {
+    font-style: italic;
+    font-weight: bold;
+    color: var(--grey);
+}
+
+.content {
+    background-color: rgb(109, 77, 19);
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.sidebar {
+    background-color: var(--lightgreen);
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.projectList {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+.subList {
+    color: rgb(173, 173, 173);
+    background-color: var(--brown);
+    font-size: 1.1rem;
+    list-style: none;
+    padding: 2px 5px;
+}
+.sublistItem {
+    color: rgb(173, 173, 173);
+    background-color:#332e2e;
+    font-size: 1rem;
+}
+.collapsible {
+    color: var(--white);
+    cursor: pointer;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-align: inherit;
+    font: inherit;
+    border-radius: 0;
+    appearance: none;
+}
+.button {
+    appearance: none;
+    border-radius: 10%;
+    background-color: var(--green);
+    color: #fff;
+    width: 90px;
+    height: 50px;
+}
+.newToDoButton {
+    justify-self: center;
+}
+.active {
+    background-color: #3f0c0c;
+}
+.projectContent {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #3f0c0c;
+}
+#projectsContainer {
+    background-color:var(--brown);
+    margin: 20px;
+    width: 80%;
+    height: 900px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding: 15px;
+    gap: 15px;
+}
+.toDoContainer {
+
+    padding: 15px;
+    background-color: #726e6eb2;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.lowPriority {
+    border: 15px solid greenyellow;
+}
+.mediumPriority {
+    border: 15px solid orange;
+}
+.highPriority {
+    border: 15px solid red;
+}
+#newProjectForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    position:fixed;
+    left:0;
+    right:0;
+    margin: auto;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 250px;
+    height: auto;
+    padding: 15px;  
+    background: var(--green);
+    text-align: center;
+    box-sizing: content-box;
+    border: 4px solid black;
+}
+#newProjectForm > input {
+    width: 200px;
+}
+#newProjectForm > button {
+    width: 100px;
+}
+#newToDoForm {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    position:fixed;
+    left:0;
+    right:0;
+    margin: auto;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 300px;
+    height: auto;
+    padding: 15px;  
+    background: var(--green);
+    text-align: center;
+    box-sizing: content-box;
+    border: 4px solid black;
+}
+
+#newToDoForm > textarea {
+    resize: none;
+}
+
+#fullSizeToDoPrompt {
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    font-weight: bold;
+    position:fixed;
+    left:0;
+    right:0;
+    margin: auto;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 400px;
+    height: auto;
+    padding: 30px;  
+    background: var(--green);
+    text-align: center;
+    box-sizing: content-box;
+    border: 4px solid black;
+}
+#fullSizeToDoPrompt > p {
+    grid-column: 1;
+    justify-self: start;
+}
+#fullSizeToDoPrompt > h2 {
+    font-size: 2rem;
+}
+#fullSizeToDoPrompt > textarea {
+    resize: none;
+}
+
+.xButton {
+    align-self: start;
+    justify-self: end;
+    grid-row: 1;
+    grid-column: 2;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.newToDoButton {
+    cursor: pointer;
+    height: 30px;
+    margin-top: 15px;
+    appearance: none;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.newToDoDone {
+    color: white;
+    background-color: var(--brown);
+}
+.newToDoCanel {
+    color: black;
+    background-color: #9b9696;
+}
+
+.toDoTitle {
+    grid-column: 1;
+    grid-row: 1;
+}
+.toDoDueDate {
+    grid-column: 1;
+    grid-row: 2;
+}
+.toDoPriority {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.toDoButton {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid rgb(37, 41, 37);
+    outline: 2px;
+    cursor: pointer;
+    align-self: center;
+    justify-self: end;
+}
+.expandButton {
+    grid-column: 2;
+    grid-row: 1;
+    background-image: url('./expand.png');
+    background-size: cover;
+}
+.editButton {
+    grid-column: 2;
+    grid-row: 2;
+    background-image: url('./edit.png');
+    background-size: cover;
+}
+.doneButton {
+    grid-column: 2;
+    grid-row: 3;
+    background-image: url('./done.png');
+    background-size: cover;
+
+}
+.deleteButton {
+    grid-column: 2;
+    grid-row: 4;
+    background-image: url('./boton-x.png');
+    background-size: cover;
+}
+.tick {
+    background-image: url('./tick.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+}
+label {
+    color: var(--white);
+}
+
+.removeProjectButton {
+    appearance: none;
+    border-radius: 10%;
+    height: 2.5rem;
+    background: rgb(80, 14, 14);
+    color: red;
+    font-weight: 800;
+}
